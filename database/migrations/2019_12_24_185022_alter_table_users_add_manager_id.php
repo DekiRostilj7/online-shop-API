@@ -26,7 +26,7 @@ class AlterTableUsersAddManagerId extends Migration
      */
     public function down()
     {
-        Schema::table('posts', function (Blueprint $table){
+        Schema::table('users', function (Blueprint $table){
             $table->dropForeign('users_manager_id_foreign');   //nece ti obrisati dok ne obrises prvo foreign key
             $table->dropColumn('manager_id');
         });

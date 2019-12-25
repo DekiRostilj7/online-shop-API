@@ -29,8 +29,7 @@ class CreateUsers extends Migration
      * @return void
      */
     public function down()
-    { // $table->integer('manager_id')->unsigned();
-        // $table->foreign('manager_id')->references('id')->on('managers')->onDelete('cascade');
+    { 
         Schema::dropIfExists('users');
     }
 }
