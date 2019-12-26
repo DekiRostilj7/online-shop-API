@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Shop;
-use App\Http\Requests\ShopRequest;
+use App\Manager;
+use App\Http\Requests\ManagerRequest;
 
-class ShopController extends Controller
+class ManagerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class ShopController extends Controller
      */
     public function index()
     {
-        return Shop::all();
+        return Manager::getAll();
     }
 
     /**
@@ -34,10 +34,10 @@ class ShopController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ShopRequest $request)
+    public function store(ManagerRequest $request)
     {
         $data=$request->all();
-        return Shop::create($data);
+        return Manager::create($data);
     }
 
     /**
@@ -69,11 +69,9 @@ class ShopController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ShopRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $shop = Shop::find($id);
-        $shop->update($request->all());
-        return $shop;
+        //
     }
 
     /**
@@ -84,7 +82,6 @@ class ShopController extends Controller
      */
     public function destroy($id)
     {
-        $shop = Shop::find($id);
-        $shop->delete();
+        //
     }
 }
