@@ -48,7 +48,7 @@ class ManagerController extends Controller
      */
     public function show($id)
     {
-        return Shop::findOrFail($id);
+        return Manager::findOrFail($id);
     }
 
     /**
