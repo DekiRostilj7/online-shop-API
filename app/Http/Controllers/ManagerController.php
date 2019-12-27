@@ -15,7 +15,7 @@ class ManagerController extends Controller
      */
     public function index()
     {
-        return Manager::getAll();
+        return Manager::all();
     }
 
     /**

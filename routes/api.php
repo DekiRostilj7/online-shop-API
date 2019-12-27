@@ -20,6 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/register', 'RegisterController@register');
 Route::post('/login', 'Auth\LoginController@authenticate');
 Route::resource('shops', 'ShopController');
+Route::resource('managers', 'ManagerController');
+
 
 
 
