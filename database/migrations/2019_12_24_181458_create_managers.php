@@ -17,7 +17,7 @@ class CreateManagers extends Migration
             $table->bigIncrements('id');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('photo', 150)->default('defaul-avatar_0.jpg');
+            $table->string('photo', 150)->default('https://picsum.photos/50/50');
             $table->string('email')->unique();
             $table->nullableTimestamps(0);
         });

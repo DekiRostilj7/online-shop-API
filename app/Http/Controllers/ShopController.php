@@ -8,6 +8,10 @@ use App\Http\Requests\ShopRequest;
 
 class ShopController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth.jwt')->except('index', 'show');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +19,7 @@ class ShopController extends Controller
      */
     public function index()
     {
-        return Shop::all();
+        return Shop::with('manager')->paginate(10);
     }
 
     /**
